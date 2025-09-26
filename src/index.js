@@ -1,3 +1,4 @@
+import './reset.css';
 import './styles.css';
 
 import { getWeatherData } from './modules/weatherAPI';
