@@ -1,6 +1,7 @@
 import './styles.css';
 
 import { getWeatherData } from './modules/weatherAPI';
+import createWeatherCard from './modules/createWeatherCard';
 
 const locationForm = document.querySelector('#location-search-form');
 const locationInput = document.querySelector('#location-search');
@@ -20,5 +21,8 @@ locationForm.addEventListener('submit', async (e) => {
         dataDiv.textContent = '';
         return;
     }
-    dataDiv.textContent = JSON.stringify(data);
+
+    const weatherCard = createWeatherCard(data);
+    dataDiv.textContent = '';
+    dataDiv.append(weatherCard);
 });
