@@ -6,6 +6,17 @@
         <title>Document</title>
     </head>
     <body>
-        hello world
+        <form id="location-search-form">
+            <label for="location-search">Location</label>
+            <input
+                required
+                type="search"
+                name="location-search"
+                id="location-search"
+            />
+            <button>Find</button>
+            <div id="location-search-error"></div>
+        </form>
+        <div id="weather-data"></div>
     </body>
 </html>
