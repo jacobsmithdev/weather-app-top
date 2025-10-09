@@ -22,7 +22,7 @@ locationForm.addEventListener('submit', async (e) => {
         return;
     }
 
-    const weatherCard = createWeatherCard(data);
+    const weatherCard = createWeatherCard(data, 'F');
     dataDiv.textContent = '';
     dataDiv.append(weatherCard);
 });
