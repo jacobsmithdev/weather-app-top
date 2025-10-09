@@ -16,16 +16,16 @@ export default function createWeatherCard(weatherData) {
 
     // Temperature Data
     const tempFeelsLike = document.createElement('div');
-    tempFeelsLike.textContent = `Feels Like: ${weatherData.temp.feelsLike}`;
+    tempFeelsLike.textContent = `Feels Like: ${Math.round(weatherData.temp.feelsLike.F)}`;
 
     const tempCurrent = document.createElement('div');
-    tempCurrent.textContent = `Current: ${weatherData.temp.current}`;
+    tempCurrent.textContent = `Current: ${Math.round(weatherData.temp.current.F)}`;
 
     const tempMax = document.createElement('div');
-    tempMax.textContent = `HI: ${weatherData.temp.max}`;
+    tempMax.textContent = `HI: ${Math.round(weatherData.temp.max.F)}`;
 
     const tempMin = document.createElement('div');
-    tempMin.textContent = `LO: ${weatherData.temp.min}`;
+    tempMin.textContent = `LO: ${Math.round(weatherData.temp.min.F)}`;
 
     const tempData = document.createElement('div');
     tempData.append(tempFeelsLike, tempCurrent, tempMax, tempMin);

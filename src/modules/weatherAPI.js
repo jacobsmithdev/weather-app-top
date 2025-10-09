@@ -1,9 +1,12 @@
+import Temp from '../classes/Temp';
+
 const API_KEY = 'F57JJ3DEGMWSPCTFJAWNTRPCM';
 const urlBase =
     'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/';
 
 // Specify what unit types API should return data in
 const unitGroup = 'us';
+const tempUnit = getTempUnit(unitGroup);
 
 async function fetchWeatherData(location) {
     if (!location) throw new Error('Location cannot be empty!');
@@ -29,10 +32,10 @@ function processWeatherData(data) {
     const datetime = currentConditions.datetime;
     const humidity = currentConditions.humidity;
 
-    const tempCurrent = currentConditions.temp;
-    const tempFeelsLike = currentConditions.feelslike;
-    const tempMax = today.tempmax;
-    const tempMin = today.tempmin;
+    const tempCurrent = new Temp(currentConditions.temp, tempUnit);
+    const tempFeelsLike = new Temp(currentConditions.feelslike, tempUnit);
+    const tempMax = new Temp(today.tempmax, tempUnit);
+    const tempMin = new Temp(today.tempmin, tempUnit);
 
     const processedData = {
         address,
@@ -59,6 +62,12 @@ async function getWeatherData(location) {
         console.error(error);
         return null;
     }
+}
+
+function getTempUnit(unitGroup) {
+    if (unitGroup === 'base') return 'K';
+    if (unitGroup === 'us') return 'F';
+    if (unitGroup === 'metric' || unitGroup === 'uk') return 'C';
 }
 
 export default { getWeatherData };
