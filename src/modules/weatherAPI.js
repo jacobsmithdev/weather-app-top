@@ -2,10 +2,13 @@ const API_KEY = 'F57JJ3DEGMWSPCTFJAWNTRPCM';
 const urlBase =
     'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/';
 
+// Specify what unit types API should return data in
+const unitGroup = 'us';
+
 async function fetchWeatherData(location) {
     if (!location) throw new Error('Location cannot be empty!');
 
-    const url = `${urlBase}${location}?key=${API_KEY}`;
+    const url = `${urlBase}${location}?key=${API_KEY}&unitGroup=${unitGroup}`;
 
     const response = await fetch(url);
     if (!response.ok) {
