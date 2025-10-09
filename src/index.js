@@ -8,6 +8,10 @@ const locationInput = document.querySelector('#location-search');
 const dataDiv = document.querySelector('#weather-data');
 const locationErrorBox = document.querySelector('#location-search-error');
 
+let tempUnit = 'F';
+
+const tempUnitBtns = document.querySelector('#temp-setting');
+
 locationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     locationErrorBox.textContent = '';
@@ -22,7 +26,15 @@ locationForm.addEventListener('submit', async (e) => {
         return;
     }
 
-    const weatherCard = createWeatherCard(data, 'F');
+    const weatherCard = createWeatherCard(data, tempUnit);
     dataDiv.textContent = '';
     dataDiv.append(weatherCard);
 });
+
+tempUnitBtns.addEventListener('click', (e) => {
+    const targetIsBtn = e.target.classList.contains('temp-setting__btn');
+    if (!targetIsBtn) return;
+
+    const btn = e.target;
+    tempUnit = btn.dataset.tempUnit;
+})
