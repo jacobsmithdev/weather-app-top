@@ -15,20 +15,24 @@ export default function createWeatherCard(weatherData) {
     humidity.textContent = `Humidity: ${weatherData.humidity}`;
 
     // Temperature Data
-    const tempFeelsLike = document.createElement('div');
-    tempFeelsLike.textContent = `Feels Like: ${Math.round(weatherData.temp.feelsLike.F)}`;
+    const tempFeelsLike = Math.round(weatherData.temp.feelsLike.F);
+    const tempFeelsLikeDisplay = document.createElement('div');
+    tempFeelsLikeDisplay.textContent = `Feels Like: ${tempFeelsLike}`;
 
-    const tempCurrent = document.createElement('div');
-    tempCurrent.textContent = `Current: ${Math.round(weatherData.temp.current.F)}`;
+    const tempCurrent = Math.round(weatherData.temp.current.F);
+    const tempCurrentDisplay = document.createElement('div');
+    tempCurrentDisplay.textContent = `Current: ${tempCurrent}`;
 
-    const tempMax = document.createElement('div');
-    tempMax.textContent = `HI: ${Math.round(weatherData.temp.max.F)}`;
+    const tempMax = Math.round(weatherData.temp.max.F);
+    const tempMaxDisplay = document.createElement('div');
+    tempMaxDisplay.textContent = `HI: ${tempMax}`;
 
-    const tempMin = document.createElement('div');
-    tempMin.textContent = `LO: ${Math.round(weatherData.temp.min.F)}`;
+    const tempMin = Math.round(weatherData.temp.min.F);
+    const tempMinDisplay = document.createElement('div');
+    tempMinDisplay.textContent = `LO: ${tempMin}`;
 
     const tempData = document.createElement('div');
-    tempData.append(tempFeelsLike, tempCurrent, tempMax, tempMin);
+    tempData.append(tempFeelsLikeDisplay, tempCurrentDisplay, tempMaxDisplay, tempMinDisplay);
 
     content.append(address, conditions, datetime, humidity, tempData);
     return content;
