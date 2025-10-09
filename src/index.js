@@ -37,4 +37,4 @@ tempUnitBtns.addEventListener('click', (e) => {
 
     const btn = e.target;
     tempUnit = btn.dataset.tempUnit;
-})
+});
