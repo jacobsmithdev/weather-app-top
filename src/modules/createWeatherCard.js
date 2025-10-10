@@ -22,7 +22,6 @@ export default function createWeatherCard(weatherData, tempUnit) {
     tempFeelsLikeDisplay.classList.add('weather-card__temp-feels-like');
     tempFeelsLikeDisplay.textContent = `Feels Like: ${tempFeelsLike}`;
 
-
     const tempCurrent = Math.round(weatherData.temp.current[tempUnit]);
     const tempCurrentDisplay = document.createElement('div');
     tempCurrentDisplay.classList.add('weather-card__temp-current');
