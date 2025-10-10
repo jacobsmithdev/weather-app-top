@@ -3,9 +3,11 @@ export default function createWeatherCard(weatherData, tempUnit) {
     content.classList.add('weather-card');
 
     const location = document.createElement('div');
+    location.classList.add('weather-card__location');
     location.textContent = weatherData.location;
 
     const conditions = document.createElement('div');
+    conditions.classList.add('weather-card__conditions');
     conditions.textContent = weatherData.conditions;
 
     const datetime = document.createElement('div');
@@ -17,34 +19,40 @@ export default function createWeatherCard(weatherData, tempUnit) {
     // Temperature Data
     const tempFeelsLike = Math.round(weatherData.temp.feelsLike[tempUnit]);
     const tempFeelsLikeDisplay = document.createElement('div');
+    tempFeelsLikeDisplay.classList.add('weather-card__temp-feels-like');
     tempFeelsLikeDisplay.textContent = `Feels Like: ${tempFeelsLike}`;
+
 
     const tempCurrent = Math.round(weatherData.temp.current[tempUnit]);
     const tempCurrentDisplay = document.createElement('div');
-    tempCurrentDisplay.textContent = `Current: ${tempCurrent}`;
+    tempCurrentDisplay.classList.add('weather-card__temp-current');
+    tempCurrentDisplay.textContent = `${tempCurrent}°`;
 
     const tempMax = Math.round(weatherData.temp.max[tempUnit]);
     const tempMaxDisplay = document.createElement('div');
+    tempMaxDisplay.classList.add('temp-range__temp');
     tempMaxDisplay.textContent = `HI: ${tempMax}`;
 
     const tempMin = Math.round(weatherData.temp.min[tempUnit]);
     const tempMinDisplay = document.createElement('div');
+    tempMinDisplay.classList.add('temp-range__temp');
     tempMinDisplay.textContent = `LO: ${tempMin}`;
 
-    const tempData = document.createElement('div');
-    tempData.append(
-        tempFeelsLikeDisplay,
-        tempCurrentDisplay,
+    const tempRange = document.createElement('div');
+    tempRange.classList.add('temp-range');
+    tempRange.append(
+        tempMinDisplay,
         tempMaxDisplay,
-        tempMinDisplay
     );
 
     content.append(
         location, 
-        conditions, 
         datetime, 
-        humidity, 
-        tempData
+        conditions, 
+        tempCurrentDisplay,
+        tempFeelsLikeDisplay,
+        tempRange,
+        humidity
     );
     return content;
 }

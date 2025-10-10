@@ -28,10 +28,43 @@ body {
 
 .weather-card {
     display: grid;
-    gap: 8px;
+    gap: 4px;
+    justify-items: center;
     outline: 1px solid black;
     background: white;
-    padding: 16px;
+    padding: 8px 16px;
+}
+
+.weather-card__location {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.weather-card__conditions {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.weather-card__temp-current {
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.weather-card__temp-feels-like {
+    font-weight: bold;
+}
+
+.temp-range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+.temp-range__temp {
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 4px 8px;
+    text-align: center;
 }
 
 #location-search-error {
