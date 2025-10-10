@@ -27,7 +27,7 @@ function processWeatherData(data) {
     const currentConditions = data.currentConditions;
     const today = data.days[0];
 
-    const address = data.resolvedAddress;
+    const location = data.resolvedAddress;
     const conditions = currentConditions.conditions;
     const datetime = currentConditions.datetime;
     const humidity = currentConditions.humidity;
@@ -38,7 +38,7 @@ function processWeatherData(data) {
     const tempMin = new Temp(today.tempmin, tempUnit);
 
     const processedData = {
-        address,
+        location,
         conditions,
         datetime,
         humidity,

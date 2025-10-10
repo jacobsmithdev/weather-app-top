@@ -2,8 +2,8 @@ export default function createWeatherCard(weatherData, tempUnit) {
     const content = document.createElement('div');
     content.classList.add('weather-card');
 
-    const address = document.createElement('div');
-    address.textContent = weatherData.address;
+    const location = document.createElement('div');
+    location.textContent = weatherData.location;
 
     const conditions = document.createElement('div');
     conditions.textContent = weatherData.conditions;
@@ -34,6 +34,6 @@ export default function createWeatherCard(weatherData, tempUnit) {
     const tempData = document.createElement('div');
     tempData.append(tempFeelsLikeDisplay, tempCurrentDisplay, tempMaxDisplay, tempMinDisplay);
 
-    content.append(address, conditions, datetime, humidity, tempData);
+    content.append(location, conditions, datetime, humidity, tempData);
     return content;
 }
