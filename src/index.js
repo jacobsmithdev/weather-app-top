@@ -15,7 +15,7 @@ const tempUnitBtns = document.querySelector('#temp-setting');
 
 locationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    locationStatusBox.textContent = '';
+    locationStatusBox.textContent = 'Searching...';
 
     const location = locationInput.value;
     if (!location) return;
@@ -27,6 +27,8 @@ locationForm.addEventListener('submit', async (e) => {
         dataDiv.textContent = '';
         return;
     }
+
+    locationStatusBox.textContent = 'Data found!';
 
     const weatherCard = createWeatherCard(data, tempUnit);
     dataDiv.textContent = '';
