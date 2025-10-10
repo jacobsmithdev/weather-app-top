@@ -39,15 +39,12 @@ export default function createWeatherCard(weatherData, tempUnit) {
 
     const tempRange = document.createElement('div');
     tempRange.classList.add('temp-range');
-    tempRange.append(
-        tempMinDisplay,
-        tempMaxDisplay,
-    );
+    tempRange.append(tempMinDisplay, tempMaxDisplay);
 
     content.append(
-        location, 
-        datetime, 
-        conditions, 
+        location,
+        datetime,
+        conditions,
         tempCurrentDisplay,
         tempFeelsLikeDisplay,
         tempRange,
