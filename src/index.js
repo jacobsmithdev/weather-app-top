@@ -7,7 +7,7 @@ import createWeatherCard from './modules/createWeatherCard';
 const locationForm = document.querySelector('#location-search-form');
 const locationInput = document.querySelector('#location-search');
 const dataDiv = document.querySelector('#weather-data');
-const locationErrorBox = document.querySelector('#location-search-error');
+const locationStatusBox = document.querySelector('#location-search-status');
 
 let tempUnit = 'F';
 
@@ -15,14 +15,15 @@ const tempUnitBtns = document.querySelector('#temp-setting');
 
 locationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    locationErrorBox.textContent = '';
+    locationStatusBox.textContent = '';
 
     const location = locationInput.value;
     if (!location) return;
 
     const data = await getWeatherData(location);
     if (!data) {
-        locationErrorBox.textContent = 'Could not find data for that location.';
+        locationStatusBox.textContent =
+            'Could not find data for that location.';
         dataDiv.textContent = '';
         return;
     }
