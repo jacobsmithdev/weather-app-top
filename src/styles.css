@@ -1,5 +1,29 @@
 body {
-    background: lightgray;
+    display: grid;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+.weather-app {
+    display: grid;
+    align-self: center;
+    gap: 4px;
+    outline: 1px solid black;
+    padding: 16px;
+}
+
+#location-search-form {
+    display: grid;
+    gap: 4px
+}
+
+#temp-setting {
+    display: flex;
+    gap: 4px;
+}
+
+.temp-setting__btn {
+    flex: 1;
 }
 
 .weather-card {
@@ -7,6 +31,15 @@ body {
     gap: 8px;
     outline: 1px solid black;
     background: white;
-    width: fit-content;
     padding: 16px;
+}
+
+#location-search-error {
+    display: flex;
+    align-content: center;
+    min-height: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: darkred;
+    border: 1px solid black;
 }

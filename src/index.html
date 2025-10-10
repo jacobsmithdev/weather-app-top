@@ -6,22 +6,26 @@
         <title>Document</title>
     </head>
     <body>
-        <form id="location-search-form">
-            <label for="location-search">Location</label>
-            <input
-                required
-                type="search"
-                name="location-search"
-                id="location-search"
-            />
-            <button>Find</button>
-            <div id="location-search-error"></div>
-        </form>
-        <div id="temp-setting">
-            <button class="temp-setting__btn" data-temp-unit="K">K</button>
-            <button class="temp-setting__btn" data-temp-unit="C">C</button>
-            <button class="temp-setting__btn" data-temp-unit="F">F</button>
+        <div class="weather-app">
+            <form id="location-search-form">
+                <div>
+                    <label for="location-search">Location</label>
+                    <input
+                        required
+                        type="search"
+                        name="location-search"
+                        id="location-search"
+                    />
+                </div>
+                <button>Find</button>
+                <div id="location-search-error"></div>
+            </form>
+            <div id="temp-setting">
+                <button class="temp-setting__btn" data-temp-unit="K">K</button>
+                <button class="temp-setting__btn" data-temp-unit="C">C</button>
+                <button class="temp-setting__btn" data-temp-unit="F">F</button>
+            </div>
+            <div id="weather-data"></div>
         </div>
-        <div id="weather-data"></div>
     </body>
 </html>
