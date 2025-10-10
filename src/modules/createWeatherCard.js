@@ -32,8 +32,19 @@ export default function createWeatherCard(weatherData, tempUnit) {
     tempMinDisplay.textContent = `LO: ${tempMin}`;
 
     const tempData = document.createElement('div');
-    tempData.append(tempFeelsLikeDisplay, tempCurrentDisplay, tempMaxDisplay, tempMinDisplay);
+    tempData.append(
+        tempFeelsLikeDisplay,
+        tempCurrentDisplay,
+        tempMaxDisplay,
+        tempMinDisplay
+    );
 
-    content.append(location, conditions, datetime, humidity, tempData);
+    content.append(
+        location, 
+        conditions, 
+        datetime, 
+        humidity, 
+        tempData
+    );
     return content;
 }
