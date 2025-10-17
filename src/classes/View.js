@@ -17,7 +17,7 @@ export default class View {
 
     updateDisplay(weatherData, tempUnit) {
         this.updateTempBtns(tempUnit);
-        this.dataDiv.textContent = '';
+        this.updateWeatherCard(weatherData, tempUnit);
 
         if (!weatherData) {
             this.locationStatusBox.textContent =
@@ -27,9 +27,6 @@ export default class View {
         }
 
         this.locationStatusBox.textContent = 'Data found!';
-
-        const weatherCard = createWeatherCard(weatherData, tempUnit);
-        this.dataDiv.append(weatherCard);
     }
 
     updateTempBtns(tempUnit) {
@@ -41,5 +38,12 @@ export default class View {
                 btn.classList.remove('temp-setting__btn--selected');
             }
         });
+    }
+
+    updateWeatherCard(weatherData, tempUnit) {
+        if (!weatherData) return;
+        this.dataDiv.textContent = '';
+        const weatherCard = createWeatherCard(weatherData, tempUnit);
+        this.dataDiv.append(weatherCard);
     }
 }
