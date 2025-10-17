@@ -18,15 +18,7 @@ export default class View {
     updateDisplay(weatherData, tempUnit) {
         this.updateTempBtns(tempUnit);
         this.updateWeatherCard(weatherData, tempUnit);
-
-        if (!weatherData) {
-            this.locationStatusBox.textContent =
-                'Could not find data for that location.';
-            this.dataDiv.textContent = '';
-            return;
-        }
-
-        this.locationStatusBox.textContent = 'Data found!';
+        this.updateStatusBox(weatherData);
     }
 
     updateTempBtns(tempUnit) {
@@ -45,5 +37,16 @@ export default class View {
         this.dataDiv.textContent = '';
         const weatherCard = createWeatherCard(weatherData, tempUnit);
         this.dataDiv.append(weatherCard);
+    }
+
+    updateStatusBox(weatherData) {
+        if (!weatherData) {
+            this.locationStatusBox.textContent =
+                'Could not find data for that location.';
+            this.dataDiv.textContent = '';
+            return;
+        }
+
+        this.locationStatusBox.textContent = 'Data found!';
     }
 }
