@@ -10,7 +10,7 @@ export default class View {
         );
         this.tempUnitBtns = document.querySelector('#temp-setting');
 
-        this.updateTempBtns(initialTempUnit);
+        this.#updateTempBtns(initialTempUnit);
     }
 
     displayAsLoading() {
@@ -18,12 +18,12 @@ export default class View {
     }
 
     updateDisplay(weatherData, tempUnit) {
-        this.updateTempBtns(tempUnit);
-        this.updateWeatherCard(weatherData, tempUnit);
-        this.updateStatusBox(weatherData);
+        this.#updateTempBtns(tempUnit);
+        this.#updateWeatherCard(weatherData, tempUnit);
+        this.#updateStatusBox(weatherData);
     }
 
-    updateTempBtns(tempUnit) {
+    #updateTempBtns(tempUnit) {
         const btns = Array.from(this.tempUnitBtns.children);
         btns.forEach((btn) => {
             if (btn.dataset.tempUnit === tempUnit) {
@@ -34,14 +34,14 @@ export default class View {
         });
     }
 
-    updateWeatherCard(weatherData, tempUnit) {
+    #updateWeatherCard(weatherData, tempUnit) {
         this.weatherDataDisplay.textContent = '';
         if (!weatherData) return;
         const weatherCard = createWeatherCard(weatherData, tempUnit);
         this.weatherDataDisplay.append(weatherCard);
     }
 
-    updateStatusBox(weatherData) {
+    #updateStatusBox(weatherData) {
         if (!weatherData) {
             this.locationStatusBox.textContent =
                 'Could not find data for that location.';
