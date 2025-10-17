@@ -16,6 +16,7 @@ export default class View {
     }
 
     updateDisplay(weatherData, tempUnit) {
+        this.updateTempBtns(tempUnit);
         this.dataDiv.textContent = '';
 
         if (!weatherData) {
@@ -29,5 +30,16 @@ export default class View {
 
         const weatherCard = createWeatherCard(weatherData, tempUnit);
         this.dataDiv.append(weatherCard);
+    }
+
+    updateTempBtns(tempUnit) {
+        const btns = Array.from(this.tempUnitBtns.children);
+        btns.forEach((btn) => {
+            if (btn.dataset.tempUnit === tempUnit) {
+                btn.classList.add('temp-setting__btn--selected');
+            } else {
+                btn.classList.remove('temp-setting__btn--selected');
+            }
+        });
     }
 }

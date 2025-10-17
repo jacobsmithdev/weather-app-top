@@ -23,4 +23,5 @@ view.tempUnitBtns.addEventListener('click', (e) => {
 
     const btn = e.target;
     model.tempUnit = btn.dataset.tempUnit;
+    view.updateDisplay(model.weatherData, model.tempUnit);
 });

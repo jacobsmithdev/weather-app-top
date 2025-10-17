@@ -26,6 +26,10 @@ body {
     flex: 1;
 }
 
+.temp-setting__btn--selected {
+    background: lightgrey;
+}
+
 .weather-card {
     display: grid;
     gap: 4px;
