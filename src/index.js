@@ -2,40 +2,22 @@ import './reset.css';
 import './styles.css';
 
 import Model from './classes/Model';
-import createWeatherCard from './modules/createWeatherCard';
+import View from './classes/View';
 
 const model = new Model(null, 'F');
+const view = new View();
 
-const locationForm = document.querySelector('#location-search-form');
-const locationInput = document.querySelector('#location-search');
-const dataDiv = document.querySelector('#weather-data');
-const locationStatusBox = document.querySelector('#location-search-status');
-
-const tempUnitBtns = document.querySelector('#temp-setting');
-
-locationForm.addEventListener('submit', async (e) => {
+view.locationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    locationStatusBox.textContent = 'Searching...';
 
-    const location = locationInput.value;
-    if (!location) return;
+    const location = view.locationInput.value;
 
+    view.displayAsLoading();
     await model.setWeatherLocation(location);
-    if (!model.weatherData) {
-        locationStatusBox.textContent =
-            'Could not find data for that location.';
-        dataDiv.textContent = '';
-        return;
-    }
-
-    locationStatusBox.textContent = 'Data found!';
-
-    const weatherCard = createWeatherCard(model.weatherData, model.tempUnit);
-    dataDiv.textContent = '';
-    dataDiv.append(weatherCard);
+    view.updateDisplay(model.weatherData, model.tempUnit);
 });
 
-tempUnitBtns.addEventListener('click', (e) => {
+view.tempUnitBtns.addEventListener('click', (e) => {
     const targetIsBtn = e.target.classList.contains('temp-setting__btn');
     if (!targetIsBtn) return;
 
