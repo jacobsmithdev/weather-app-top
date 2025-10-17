@@ -33,8 +33,8 @@ export default class View {
     }
 
     updateWeatherCard(weatherData, tempUnit) {
-        if (!weatherData) return;
         this.dataDiv.textContent = '';
+        if (!weatherData) return;
         const weatherCard = createWeatherCard(weatherData, tempUnit);
         this.dataDiv.append(weatherCard);
     }
@@ -43,7 +43,6 @@ export default class View {
         if (!weatherData) {
             this.locationStatusBox.textContent =
                 'Could not find data for that location.';
-            this.dataDiv.textContent = '';
             return;
         }
 
