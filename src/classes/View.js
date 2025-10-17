@@ -1,7 +1,7 @@
 import createWeatherCard from '../modules/createWeatherCard';
 
 export default class View {
-    constructor() {
+    constructor(initialTempUnit = 'F') {
         this.locationForm = document.querySelector('#location-search-form');
         this.locationInput = document.querySelector('#location-search');
         this.weatherDataDisplay = document.querySelector('#weather-data');
@@ -9,6 +9,8 @@ export default class View {
             '#location-search-status'
         );
         this.tempUnitBtns = document.querySelector('#temp-setting');
+
+        this.updateTempBtns(initialTempUnit);
     }
 
     displayAsLoading() {

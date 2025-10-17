@@ -5,7 +5,7 @@ import Model from './classes/Model';
 import View from './classes/View';
 
 const model = new Model(null, 'F');
-const view = new View();
+const view = new View(model.tempUnit);
 
 view.locationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
