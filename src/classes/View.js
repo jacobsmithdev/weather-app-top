@@ -4,7 +4,7 @@ export default class View {
     constructor() {
         this.locationForm = document.querySelector('#location-search-form');
         this.locationInput = document.querySelector('#location-search');
-        this.dataDiv = document.querySelector('#weather-data');
+        this.weatherDataDisplay = document.querySelector('#weather-data');
         this.locationStatusBox = document.querySelector(
             '#location-search-status'
         );
@@ -33,10 +33,10 @@ export default class View {
     }
 
     updateWeatherCard(weatherData, tempUnit) {
-        this.dataDiv.textContent = '';
+        this.weatherDataDisplay.textContent = '';
         if (!weatherData) return;
         const weatherCard = createWeatherCard(weatherData, tempUnit);
-        this.dataDiv.append(weatherCard);
+        this.weatherDataDisplay.append(weatherCard);
     }
 
     updateStatusBox(weatherData) {
