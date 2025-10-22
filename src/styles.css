@@ -90,6 +90,11 @@ button:active {
     font-size: 1rem;
 }
 
+#location-search:focus {
+    outline: 2px solid black;
+    outline-offset: -1px;
+}
+
 #temp-setting {
     display: flex;
     gap: 4px;
