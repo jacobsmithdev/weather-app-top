@@ -78,10 +78,6 @@ button:active {
     flex: 1;
 }
 
-.temp-setting__btn--selected {
-    background: lightgrey;
-}
-
 .weather-card {
     margin: 16px;
     margin-top: 0px;

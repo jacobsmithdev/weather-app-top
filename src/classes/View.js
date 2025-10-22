@@ -27,9 +27,9 @@ export default class View {
         const btns = Array.from(this.tempUnitBtns.children);
         btns.forEach((btn) => {
             if (btn.dataset.tempUnit === tempUnit) {
-                btn.classList.add('temp-setting__btn--selected');
+                btn.classList.add('button--selected');
             } else {
-                btn.classList.remove('temp-setting__btn--selected');
+                btn.classList.remove('button--selected');
             }
         });
     }
