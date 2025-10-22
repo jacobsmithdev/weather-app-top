@@ -52,13 +52,15 @@ button:active {
 }
 
 .weather-app__header {
+    background: navy;
+    color: white;
     display: flex;
     align-items: center;
     padding: 4px;
 }
 
 .weather-app__logo {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     flex: 1;
 }
