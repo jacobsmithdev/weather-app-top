@@ -68,9 +68,17 @@ button:active {
 }
 
 #location-search-form {
+    font-weight: bold;
     padding: 0px 16px;
     display: grid;
     gap: 4px
+}
+
+#location-search {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
 }
 
 #temp-setting {
