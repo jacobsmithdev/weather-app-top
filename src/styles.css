@@ -8,7 +8,7 @@ body {
     display: grid;
     align-self: center;
     gap: 4px;
-    outline: 1px solid black;    
+    border: 1px solid black;    
 }
 
 .weather-app__header {
@@ -53,7 +53,7 @@ body {
     display: grid;
     gap: 4px;
     justify-items: center;
-    outline: 1px solid black;
+    border: 1px solid black;
     background: white;
     padding: 8px 16px;
 }
