@@ -8,11 +8,27 @@ body {
     display: grid;
     align-self: center;
     gap: 4px;
-    outline: 1px solid black;
-    padding: 16px;
+    outline: 1px solid black;    
+}
+
+.weather-app__header {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.weather-app__logo {
+    font-size: 1rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.weather-app__btn {
+    font-weight: bold;
 }
 
 #location-search-form {
+    padding: 0px 16px;
     display: grid;
     gap: 4px
 }
@@ -20,6 +36,7 @@ body {
 #temp-setting {
     display: flex;
     gap: 4px;
+    padding: 0px 16px;
 }
 
 .temp-setting__btn {
@@ -31,6 +48,8 @@ body {
 }
 
 .weather-card {
+    margin: 16px;
+    margin-top: 0px;
     display: grid;
     gap: 4px;
     justify-items: center;
