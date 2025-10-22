@@ -4,6 +4,10 @@ body {
     padding-top: 32px;
 }
 
+* {
+    font-family: 'ari-w9500';
+}
+
 button {
     font-weight: bold;
     border-top: 2px solid white;

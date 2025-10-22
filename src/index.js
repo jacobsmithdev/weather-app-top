@@ -1,4 +1,5 @@
 import './reset.css';
+import './fonts.css';
 import './styles.css';
 
 import Model from './classes/Model';

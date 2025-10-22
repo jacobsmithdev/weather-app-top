@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'ari-w9500';
+    src: url(./assets/fonts/ari-w9500.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'ari-w9500';
+    src: url(./assets/fonts/ari-w9500-bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'ari-w9500';
+    src: url(./assets/fonts/ari-w9500-display.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'ari-w9500-condensed';
+    src: url(./assets/fonts/ari-w9500-condensed.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'ari-w9500-condensed';
+    src: url(./assets/fonts/ari-w9500-condensed-bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'ari-w9500-condensed';
+    src: url(./assets/fonts/ari-w9500-condensed-display.ttf);
+    font-weight: 900;
+}
