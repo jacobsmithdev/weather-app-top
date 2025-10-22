@@ -1,3 +1,21 @@
+import MultiColorGradient from '../classes/MultiColorGradient';
+import Temp from '../classes/Temp';
+
+// Based on:
+// https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/a-meaningful-temperature-palette
+const heatMap = new MultiColorGradient([
+    { position: 0.0, color: '#ffffff' },
+    { position: 0.3, color: '#5961acff' },
+    { position: 0.5, color: '#44a0c4ff' },
+    { position: 0.7, color: '#eff16bff' },
+    { position: 0.8, color: '#f3a238ff' },
+    { position: 0.9, color: '#e63149ff' },
+    { position: 1.0, color: '#913d3dff' },
+]);
+
+const heatMapMin = new Temp(-60, 'F');
+const heatMapMax = new Temp(120, 'F');
+
 export default function createWeatherCard(weatherData, tempUnit) {
     const content = document.createElement('div');
     content.classList.add('weather-card');
@@ -31,11 +49,13 @@ export default function createWeatherCard(weatherData, tempUnit) {
     const tempMaxDisplay = document.createElement('div');
     tempMaxDisplay.classList.add('temp-range__temp');
     tempMaxDisplay.textContent = `HI: ${tempMax}`;
+    tempMaxDisplay.style.backgroundColor = getTempColor(weatherData.temp.max);
 
     const tempMin = Math.round(weatherData.temp.min[tempUnit]);
     const tempMinDisplay = document.createElement('div');
     tempMinDisplay.classList.add('temp-range__temp');
     tempMinDisplay.textContent = `LO: ${tempMin}`;
+    tempMinDisplay.style.backgroundColor = getTempColor(weatherData.temp.min);
 
     const tempRange = document.createElement('div');
     tempRange.classList.add('temp-range');
@@ -51,4 +71,11 @@ export default function createWeatherCard(weatherData, tempUnit) {
         humidity
     );
     return content;
+}
+
+function getTempColor(temp) {
+    const range = heatMapMax.F - heatMapMin.F;
+    const tempPlacement = (temp.F - heatMapMin.F) / range;
+
+    return heatMap.getColorAt(tempPlacement);
 }
