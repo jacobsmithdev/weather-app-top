@@ -4,6 +4,41 @@ body {
     padding-top: 32px;
 }
 
+button {
+    font-weight: bold;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    background: lightgray;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
+
+
+.button--selected {
+    background: navy;
+    color: white;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
+
 .weather-app {
     display: grid;
     align-self: center;
