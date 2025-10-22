@@ -26,3 +26,7 @@ view.tempUnitBtns.addEventListener('click', (e) => {
     model.tempUnit = btn.dataset.tempUnit;
     view.updateDisplay(model.weatherData, model.tempUnit);
 });
+
+view.minimizeBtn.addEventListener('click', () => {
+    view.weatherApp.classList.toggle('weather-app--hidden');
+});

@@ -1,6 +1,6 @@
 body {
     display: grid;
-    justify-content: center;
+    justify-items: center;
     padding-top: 32px;
     background: darkcyan;
 }
@@ -72,6 +72,18 @@ button:active {
 
 .weather-app__btn {
     font-weight: bold;
+}
+
+.weather-app--hidden #location-search-form {
+    display: none;
+}
+
+.weather-app--hidden #temp-setting {
+    display: none;
+}
+
+.weather-app--hidden #weather-data {
+    display: none;
 }
 
 #location-search-form {

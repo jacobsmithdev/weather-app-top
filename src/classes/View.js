@@ -2,12 +2,14 @@ import createWeatherCard from '../modules/createWeatherCard';
 
 export default class View {
     constructor(initialTempUnit = 'F') {
+        this.weatherApp = document.querySelector('.weather-app');
         this.locationForm = document.querySelector('#location-search-form');
         this.locationInput = document.querySelector('#location-search');
         this.weatherDataDisplay = document.querySelector('#weather-data');
         this.locationStatusBox = document.querySelector(
             '#location-search-status'
         );
+        this.minimizeBtn = document.querySelector('#weather-app__minimize');
         this.tempUnitBtns = document.querySelector('#temp-setting');
 
         this.#updateTempBtns(initialTempUnit);
