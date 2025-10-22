@@ -10,6 +10,7 @@ export default class View {
             '#location-search-status'
         );
         this.minimizeBtn = document.querySelector('#weather-app__minimize');
+        this.expandBtn = document.querySelector('#weather-app__expand');
         this.tempUnitBtns = document.querySelector('#temp-setting');
 
         this.#updateTempBtns(initialTempUnit);

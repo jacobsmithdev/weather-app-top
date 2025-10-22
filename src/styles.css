@@ -1,7 +1,6 @@
 body {
     display: grid;
-    justify-items: center;
-    padding-top: 32px;
+    min-height: 100vh;
     background: darkcyan;
 }
 
@@ -45,8 +44,10 @@ button:active {
 }
 
 .weather-app {
-    display: grid;
-    align-self: center;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    place-self: start center;
     gap: 4px;
     box-shadow: 0px 0px 0px 2px rgba(12, 12, 12, 0.5);
     background: lightgrey;
@@ -73,6 +74,11 @@ button:active {
 
 .weather-app__btn {
     font-weight: bold;
+}
+
+.weather-app--expanded {
+    margin-top: 0px;
+    place-self: stretch;
 }
 
 .weather-app--hidden #location-search-form {
