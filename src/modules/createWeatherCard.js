@@ -17,8 +17,12 @@ const heatMapMin = new Temp(-60, 'F');
 const heatMapMax = new Temp(120, 'F');
 
 export default function createWeatherCard(weatherData, tempUnit) {
+    const minTempColor = getTempColor(weatherData.temp.min);
+    const maxTempColor = getTempColor(weatherData.temp.max);
+
     const content = document.createElement('div');
     content.classList.add('weather-card');
+    content.style.background = `linear-gradient(${maxTempColor}, ${minTempColor})`;
 
     const location = document.createElement('div');
     location.classList.add('weather-card__location');
@@ -49,13 +53,13 @@ export default function createWeatherCard(weatherData, tempUnit) {
     const tempMaxDisplay = document.createElement('div');
     tempMaxDisplay.classList.add('temp-range__temp');
     tempMaxDisplay.textContent = `HI: ${tempMax}`;
-    tempMaxDisplay.style.backgroundColor = getTempColor(weatherData.temp.max);
+    tempMaxDisplay.style.backgroundColor = maxTempColor;
 
     const tempMin = Math.round(weatherData.temp.min[tempUnit]);
     const tempMinDisplay = document.createElement('div');
     tempMinDisplay.classList.add('temp-range__temp');
     tempMinDisplay.textContent = `LO: ${tempMin}`;
-    tempMinDisplay.style.backgroundColor = getTempColor(weatherData.temp.min);
+    tempMinDisplay.style.backgroundColor = minTempColor;
 
     const tempRange = document.createElement('div');
     tempRange.classList.add('temp-range');
