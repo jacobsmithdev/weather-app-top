@@ -93,14 +93,18 @@ button:active {
     flex: 1;
 }
 
+
 .weather-card {
     margin: 16px;
     margin-top: 0px;
     display: grid;
     gap: 4px;
     justify-items: center;
-    border: 1px solid black;
-    background: white;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid white;
+    border-right: 2px solid grey;
+    background: lightgrey;
     padding: 8px 16px;
 }
 
@@ -130,7 +134,10 @@ button:active {
 }
 
 .temp-range__temp {
-    border: 1px solid black;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
     font-weight: bold;
     padding: 4px 8px;
     text-align: center;
