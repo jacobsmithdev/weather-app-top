@@ -11,6 +11,8 @@ export default class View {
         );
         this.minimizeBtn = document.querySelector('#weather-app__minimize');
         this.expandBtn = document.querySelector('#weather-app__expand');
+        this.closeBtn = document.querySelector('#weather-app__close');
+        this.weatherAppIcon = document.querySelector('#weather-app-icon');
         this.tempUnitBtns = document.querySelector('#temp-setting');
 
         this.#updateTempBtns(initialTempUnit);
@@ -24,6 +26,11 @@ export default class View {
         this.#updateTempBtns(tempUnit);
         this.#updateWeatherCard(weatherData, tempUnit);
         this.#updateStatusBox(weatherData);
+    }
+
+    toggleVisibility() {
+        this.weatherApp.classList.toggle('weather-app--closed');
+        this.weatherAppIcon.classList.toggle('weather-app-icon--closed');
     }
 
     #updateTempBtns(tempUnit) {

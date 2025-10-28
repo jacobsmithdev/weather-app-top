@@ -34,3 +34,11 @@ view.minimizeBtn.addEventListener('click', () => {
 view.expandBtn.addEventListener('click', () => {
     view.weatherApp.classList.toggle('weather-app--expanded');
 });
+
+view.closeBtn.addEventListener('click', () => {
+    view.toggleVisibility();
+});
+
+view.weatherAppIcon.addEventListener('dblclick', () => {
+    view.toggleVisibility();
+});

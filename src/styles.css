@@ -93,11 +93,61 @@ button:active {
     display: none;
 }
 
+.weather-app--closed {
+    display: none;
+}
+
 #location-search-form {
     font-weight: bold;
     padding: 0px 16px;
     display: grid;
     gap: 4px
+}
+
+.weather-app-icon {
+    background: none;
+    border: none;
+    place-self: start;
+    display: grid;
+    justify-items: center;
+    margin: 32px;
+    max-width: min-content;
+    gap: 4px;
+}
+
+.weather-app-icon:active {
+    background: none;
+    border: none;
+}
+
+.weather-app-icon:focus {
+    outline: 1px solid lightgrey;
+}
+
+.weather-app-icon:focus .weather-app-icon__text {
+    background-color: grey;
+}
+
+.weather-app-icon__logo {
+    border: 6px ridge black;
+    place-content: center;
+    width: 64px;
+    height: 64px;
+    color: white;
+    text-shadow: 1px 1px navy;
+    font-size: 1.5rem;
+    background: linear-gradient(#1335c9, #81bcff);
+}
+
+.weather-app-icon__text {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.weather-app-icon--closed {
+    display: none;
 }
 
 #location-search {
