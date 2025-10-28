@@ -28,11 +28,11 @@ view.tempUnitBtns.addEventListener('click', (e) => {
 });
 
 view.minimizeBtn.addEventListener('click', () => {
-    view.weatherApp.classList.toggle('weather-app--hidden');
+    view.minimize();
 });
 
 view.expandBtn.addEventListener('click', () => {
-    view.weatherApp.classList.toggle('weather-app--expanded');
+    view.expand();
 });
 
 view.closeBtn.addEventListener('click', () => {

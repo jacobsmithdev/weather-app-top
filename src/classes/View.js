@@ -33,6 +33,14 @@ export default class View {
         this.weatherAppIcon.classList.toggle('weather-app-icon--closed');
     }
 
+    minimize() {
+        this.weatherApp.classList.toggle('weather-app--hidden');
+    }
+
+    expand() {
+        this.weatherApp.classList.toggle('weather-app--expanded');
+    }
+
     #updateTempBtns(tempUnit) {
         const btns = Array.from(this.tempUnitBtns.children);
         btns.forEach((btn) => {
