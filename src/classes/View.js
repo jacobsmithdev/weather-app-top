@@ -34,10 +34,12 @@ export default class View {
     }
 
     minimize() {
+        this.weatherApp.classList.remove('weather-app--expanded');
         this.weatherApp.classList.toggle('weather-app--hidden');
     }
 
     expand() {
+        this.weatherApp.classList.remove('weather-app--hidden');
         this.weatherApp.classList.toggle('weather-app--expanded');
     }
 
